@@ -1,0 +1,92 @@
+<div class="page pagestats" data-name="all_product">
+    <div class="navbar ">
+        <div class="navbar-bg"></div>
+        <div class="navbar-inner">
+            <div class="left  no-margin-right">
+                <a href="/home/" class="link icon-only back">
+                    <i class="icon f7-icons size-22">arrow_left</i>
+                </a>
+            </div>
+            <div class="title text-align-center">
+               Product List
+            </div>
+            <div class="right text-align-center">
+                <a href="/cart/" class="link ">
+                    <i class="icon f7-icons size-22">cart</i>
+                     <span class="countercart4">0</span>
+                </a>
+            </div>
+             <div class="subnavbar"style="margin-top: 5px;background:black;padding: 5px;">
+        <form data-search-container=".search-list" data-search-in=".item-title" class="searchbar searchbar-init">
+          <div class="searchbar-inner">
+            <div class="searchbar-input-wrap">
+              <input type="search"id="food_search" oninput="searchProduct()" placeholder="Product Name, Category, Price" />
+              <i class="searchbar-icon"></i>
+              <span class="input-clear-button"></span>
+            </div>
+            <span class="searchbar-disable-button"style="color:white;">Cancel</span>
+          </div>
+        </form>
+                 
+      </div>
+            <div class="subnavbar"style="margin-top: 45px;background:white;border-top:1px solid black">
+       
+            <div class="card--header z-index-5"style="width:100%;">
+                            <table style="width:100%;">
+                <tr>
+                    <td>
+                        <h5 class="no-margin-bottom"style="padding-left: 10px;">Sort Product</h5>
+                            </td>
+                    <td align="right">
+                                    <div class="menu-item menu-item-dropdown z-index-5">
+                                        <div class="menu-item-content text-color-theme">
+                                            <i class="icon f7-icons">line_horizontal_3_decrease</i></div>
+                                        <div class="menu-dropdown menu-dropdown-right">
+                                            <div class="menu-dropdown-content">
+                                                <a href="#"onclick="sortLoad('newest')" class="menu-dropdown-link menu-close">Newest</a>
+                                                <a href="#"onclick="sortLoad('oldest')" class="menu-dropdown-link menu-close">Oldest</a>
+                                                <a href="#"onclick="sortLoad('low')" class="menu-dropdown-link menu-close">Low to High [Price]</a>
+                                                <a href="#"onclick="sortLoad('high')" class="menu-dropdown-link menu-close">High to Low [Price]</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                </tr>
+                </table>
+                
+                        </div>      
+      </div>
+        </div>
+    </div>
+    <!-- Fixed Toolbar -->
+    <!-- main page content -->
+    <div class="page-content infinite-scroll infinite-scroll-content infinite-scroll-top" id="product_page">
+        <!-- search -->
+<!-- search -->
+ <div class="main-container container" style="margin-top: 70px;">
+        <!-- Breakfast block -->
+        <div class="block">
+                    <div class="margin-bottom"style="background:transparent;">
+                        <div class="cardcontent ">
+                            <div class="row margin-bottom-half "id="product_list">
+                                 <div class="col-100 medium-100 large-100">
+                                  <div class="card elevation-2 margin-bottom" style="background:none;">
+                                    <div class="card-content card-content-padding"style="padding:4px;background: none;">
+                                     <img src="img/loading1.gif" style="width:100%">
+                                    </div>
+                                  </div>
+                                </div>
+                            </div>
+ <div class="preloader infinite-scroll-preloader" id="scoll_loader" style="display: none"></div>
+                        </div>
+                        
+                    </div>
+                </div>
+        <!-- And somewhere in DOM -->
+      
+        </div>
+      
+
+     <!-- footer static -->
+    </div>
+</div>

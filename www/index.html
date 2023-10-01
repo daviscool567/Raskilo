@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en" class="color-theme-pink">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="theme-color" content="#2196f3">
+  <meta http-equiv="Content-Security-Policy" content="default-src * 'self' 'unsafe-inline' 'unsafe-eval' data: gap:">
+  <title>Raskilo Group</title>
+  <!-- favicon icons -->
+  <link rel="apple-touch-icon" href="img/logo.png">
+  <link rel="icon" href="img/logo.png">
+  <!-- pwa -->
+  <!-- Google fonts-->
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <!-- stylesheet framwork -->
+  <link rel="stylesheet" href="vendor/framework7-6.0.21/css/framework7-bundle.min.css">
+  <!-- noUISlider js range picker css -->
+  <link rel="stylesheet" href="vendor/nouislider/nouislider.min.css">
+  <!-- stylesheet framwork7 components  -->
+  <link rel="stylesheet" href="css/app.css">
+  <!-- stylesheet template custom  -->
+  <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+  <div id="app">
+   
+    <div class="view view-main view-init safe-areas" data-master-detail-breakpoint="768" data-url="/">
+      <!-- loader section -->
+      <!-- loader section ends -->
+    </div>
+  </div>
+  <!-- framework 7  js -->
+  <script src="vendor/framework7-6.0.21/js/framework7-bundle.min.js"></script>
+  <script src="vendor/chart-js-3.3.1/chart.min.js"></script>
+  <script src="vendor/progressbar-js/progressbar.min.js"></script>
+  <script src="vendor/nouislider/nouislider.min.js"></script>
+  <script src="js/routes.js"></script>
+  <script src="js/app.js"></script>
+  <script src="cordova.js"></script>  
+    
+   <script src="build/direct.js"></script>  
+   <script src="build/jquery.min.js"></script>
+    <script src="https://checkout.flutterwave.com/v3.js"></script>
+   <script src="build/back.js"></script>
+   <script src="build/register.js"></script> 
+   <script src="build/login.js"></script>
+   <script src="build/resetpassword.js"></script>
+   <script src="build/profile.js"></script>  
+   <script src="build/send_invite.js"></script> 
+   <script src="build/otpverify.js"></script>
+     <script src="build/fcm.js"></script>
+
+   <!-----SHOPPING----->
+    <script src="build/shortmenu.js"></script>
+    <script src="build/addtocart_product.js"></script>
+    <script src="build/loadStat.js"></script>
+    <script src="build/loadcategory.js"></script>
+    <script src="build/cart_list.js"></script>
+    <script src="build/cart_list2.js"></script>
+    <script src="build/pay.js"></script>
+    <script src="build/sales.js"></script>
+    <script src="build/salesdetails.js"></script>
+    
+    
+ <script>
+   function checkSession()
+     {
+         user = localStorage.getItem("rask_user");
+         
+         if(user == '' || user == null)
+	          {
+	     	app.views.main.router.navigate('/login/', {reloadAll: true});
+	         }
+	        else
+	       {
+     
+           app.views.main.router.navigate('/home/');
+             }  
+         
+     }
+    </script>   
+  <script>
+    
+     document.addEventListener("deviceready", onDeviceReady, false);  
+ function onDeviceReady(){
+   document.addEventListener("backbutton", onBackKeyDown, false); 
+   function onBackKeyDown(e) { 
+   e.preventDefault(); 
+       //alert(app.views.main.router.url);
+    //Handle the back button
+             if(app.views.main.router.url == '/'){
+                       navigator.app.exitApp();
+             }
+           else if(app.views.main.router.url == '/landing/'){
+                       navigator.app.exitApp();
+             }
+			else if(app.views.main.router.url == '/login/'){
+                      navigator.app.exitApp();
+			}
+       else if(app.views.main.router.url == '/login2/'){
+                      navigator.app.exitApp();
+			}
+          else if(app.views.main.router.url == '/register/'){
+                    navigator.app.exitApp();
+			}
+			else if(app.views.main.router.url == '/home/'){
+                     navigator.app.exitApp();
+			}
+			else{
+			/////////auto load timeline list
+				 window.history.back();
+				mainView.router.back();
+			}
+		}; 
+     
+     
+ ///////////////////////////////////////////////////////
+     ////////////////firebase//////////////
+       ///////firebase///////////
+      FirebasePlugin.getToken(function(fcmToken) {
+    console.log(fcmToken);
+      saveFCM(fcmToken); 
+       
+}, function(error) {
+    console.error(error);
+});
+//////////////////
+/////////////////////
+FirebasePlugin.onTokenRefresh(function(fcmToken) {
+    console.log(fcmToken);
+    saveFCM(fcmToken);
+}, function(error) {
+    console.error(error);
+});
+
+///////////////////////
+FirebasePlugin.onMessageReceived(function(message) {
+   // alert("Message type: " + message.messageType);
+    if(message.messageType === "notification"){
+        //alert("Notification message received");
+        if(message.tap){
+           // alert("Tapped in " + message.tap);
+        }
+    }
+    console.dir(message);
+}, function(error) {
+    console.error(error);
+});
+//////////////////////////
+FirebasePlugin.subscribe("Raskilo_news", function(){
+   // alert("Subscribed to topic");
+}, function(error){
+    // console.error("Error subscribing to topic: " + error);
+}); 
+    
+FirebasePlugin.setAutoInitEnabled(false, function(){
+    console.log("Auto init has been disabled ");
+    FirebasePlugin.unregister();
+}); 
+     
+     
+     
+  screen.orientation.lock('portrait'); 
+     // lock the device orientation
+window.screen.orientation.lock('portrait');
+     
+     
+ }  
+     
+
+    </script>  
+   
+    
+</body>
+
+</html>

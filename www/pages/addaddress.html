@@ -1,0 +1,76 @@
+<div class="page page-" data-name="all-state">
+    <div class="navbar ">
+        <div class="navbar-bg"></div>
+        <div class="navbar-inner">
+            <div class="left no-margin-right">
+                <a href="#" class="button icon-only back">
+                    <i class="icon f7-icons size-22">arrow_left</i>
+                </a>
+            </div>
+            <div class="title ">
+                Add Address
+            </div>
+            <div class="right">
+                <a href="/profile/" class="link ">
+                    <i class="icon f7-icons size-22">person_circle</i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- main page content -->
+    <div class="page-content">
+        <!-- add address fields -->
+        <div class="block margin-bottom-half">
+            <div class="list form-list margin-bottom-half">
+                <ul>
+                    <li class="item-content item-input">
+                        <div class="item-inner">
+                            <div class="item-title item-label">State</div>
+                            <div class="item-input-wrap input-dropdown">
+                                <select type="text"onchange="loadAddressLocality()" id="add_state"></select>
+                               
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="list form-list margin-bottom-half">
+                <ul>
+                    <li class="item-content item-input">
+                        <div class="item-inner">
+                            <div class="item-title item-floating-label">Address</div>
+                            <div class="item-input-wrap">
+                                <input type="text" id="add_address" placeholder="Address">
+                                <span class="input-clear-button"></span>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="list form-list margin-bottom-half">
+                <ul>
+                    <li class="item-content item-input">
+                        <div class="item-inner">
+                            
+                            <div class="item-title item-label">Select Locality</div>
+                            <div class="item-input-wrap input-dropdown">
+                                <select id="add_locality">
+                                </select>
+                                <span class="input-clear-button"></span>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="block">
+            <div class="row margin-bottom">
+                <div class="col-100 medium-50 large-33 margin-h-auto">
+                    <a href="#"onclick="addAddress()" class="button button-fill button-large button-raised">Submit</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "743892809331",
+    "project_id": "raskilo-app",
+    "storage_bucket": "raskilo-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:743892809331:android:041ff2c57166a445d5dc06",
+        "android_client_info": {
+          "package_name": "com.raskilogrp.diim"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "743892809331-pb4s0uab3q6l7c9uuq79sqnp644qv48p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDjJzOn08fG6sqDiFMH8UHZ7sbahEE0JsU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "743892809331-pb4s0uab3q6l7c9uuq79sqnp644qv48p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,58 @@
+{
+  "cordova-plugin-geolocation": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-geolocation@^4.1.0"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "cordova-plugin-app-exit": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-app-exit@^0.0.2"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "cordova-plugin-camera": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-camera@7.0.0"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "cordova-plugin-dialogs": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-dialogs"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "cordova-plugin-device": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-device@^2.1.0"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "cordova-plugin-badge-fix": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-badge-fix"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "cordova-plugin-firebasex": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-firebasex@^16.1.0"
+    },
+    "is_top_level": true,
+    "variables": {}
+  }
+}

@@ -1,0 +1,170 @@
+<div class="page page-" data-name="summary-pay">
+    <div class="navbar ">
+        <div class="navbar-bg"></div>
+        <div class="navbar-inner">
+            <div class="left  no-margin-right">
+                 <a href="#" class="link back icon-only" oncli="loadDelivery();">
+                    <i class="icon f7-icons size-22">arrow_left</i>
+                </a>
+            </div>
+            <div class="title text-align-center">
+                Payment
+            </div>
+            <div class="right text-align-center">
+                <a href="/shop/" class="link ">
+                    <i class="icon f7-icons size-22">gift_fill</i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- main page content -->
+    <div class="page-content has-footer">
+
+        <!-- wizard links -->
+       <!-- wizard links -->
+        <div class="block">
+            <div class="row justify-content-between wizard-wrapper margin-bottom elevation-2  top-20">
+                <div class="col-33">
+                    <a href="/cart/" class="wizard-link">
+                        <i class="icons f7-icons elevation-2">bag</i>
+                        <span class="wizard-text">Products</span>
+                    </a>
+                </div>
+                <div class="col-33">
+                    <a href="/address/" class="wizard-link ">
+                        <i class="icons f7-icons elevation-2">placemark</i>
+                        <span class="wizard-text">Address</span>
+                    </a>
+                </div>
+                <div class="col-33">
+                    <a href="#" class="wizard-link filled active">
+                        <i class="icons f7-icons elevation-2">creditcard</i>
+                        <span class="wizard-text">Payment</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+
+       
+  <!-- cart items -->
+        <div class="block">
+            <div class="row margin-bottom-half">
+                <div class="col align-self-center">
+                    <h6 class="no-margin-bottom"id="cartnumber3">in cart</h6>
+                </div>
+                <div class="col-auto pe-0 align-self-center">
+                    <a href="/stats/" class="link text-color-theme">Shop more <i class="icons f7-icons">chevron_right</i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="block">
+            <div class="row margin-bottom-half"id="cart_listing_frame2">
+			       
+            
+                <div class="col-100 medium-50 large-33">
+                    <div class="card elevation-2 product margin-bottom-half">
+                        <div class="card-content card-content-padding">
+                            <div class="row" style="padding: 20px;">
+                                Loading Cart...
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+          <!-- cart items -->
+        <div class="block">
+            <div class="row margin-bottom-half">
+                <div class="col align-self-center">
+                    <h5 class="no-margin-bottom">Delivery location</h5>
+                </div>
+                <div class="col-auto pe-0 align-self-center">
+                    <a href="/cart/" class="link text-color-theme">Change <i class="icons f7-icons">chevron_right</i></a>
+                </div>
+            </div>
+        </div>
+           <div class="block">
+            <div class="row">
+                <div class="col-100 medium-50 large-33 mx-auto">
+                    <div class="card elevation-2 product margin-bottom">
+                        <div class="card-header">
+                            <div class="row">
+                                <div class="col align-self-center">
+                                    <h5 class="no-margin-bottom"id="address_locality2">Raskilo<br>
+                                        <span class="text-opac small"id="address_default2">***</span>
+                                    </h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-content card-content-padding">
+                            <div class="row">
+                                <div class="col"id="delivery_address2">
+                                    
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+     <!-- pricing -->
+     <div class="block">
+            <div class="row margin-bottom-half">
+                <div class="col align-self-center">
+                    <h5 class="no-margin-bottom">Pricing</h5>
+                </div>
+            </div>
+            
+
+            <div class="row margin-bottom-half">
+                <div class="col">
+                    <p>Subtotal</p>
+                </div>
+                <div class="col-auto">&#8358;<b id="subtotal3">00</b></div>
+            </div>
+			<div class="row margin-bottom-half">
+                <div class="col">
+                    <p>Delivery Charge</p>
+                </div>
+                <div class="col-auto">&#8358;<b id="delivery2">00</b></div>
+            </div>
+         <div class="row margin-bottom-half">
+                <div class="col">
+                    <p>Total Weight</p>
+                </div>
+                <div class="col-auto"><b id="weight3">00</b>kg</div>
+            </div>
+
+            <div class="row font-weight-bold margin-bottom">
+                <div class="margin-bottom-half col-100">
+                    <div class="dashed-line"></div>
+                </div>
+                <div class="col">
+                    <p>Total</p>
+                </div>
+                <div class="col-auto">&#8358;<b id="total3">00</b></div>
+            </div>
+			
+        </div>
+
+        <!-- Button -->
+        <div class="block">
+            <div class="row margin-bottom">
+                <div class="col align-self-center">
+                <button href="#"onclick="payOrder()"id="wallet_pay" class="button button-large button-fill elevation-3 color-green" disabled>Generating Order ID...</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+     <!-- footer static -->
+  
+</div>
