@@ -160,7 +160,7 @@ function sendRequest(){
 			success: function(res){
 			msg = res.message;
 			console.log(res);
-        if(res.success == 'YES'){                                 
+        if(res.status == true){                                 
              app.dialog.close();
             
              var phone = sessionStorage.getItem("rask_phone");
@@ -285,13 +285,13 @@ function loadService(){
 		for(i=0; i< len; i++)
 		  {
               
-            list +='<div class="col-33 medium-15 large-10">\
-                <div class="card elevation-2 margin-bottom">\
-                <div class="card-content card-contentpadding"style="height:100px;">\
+            list +='<div class="col-25 medium-15 large-10"style="padding:10px;">\
+                <div class="card elevation-2 marginbottomhalf">\
+                <div class="card-content card-contentpadding"style="height:95px;">\
                   <a href="/order-service/"onclick="orderService(\''+res.data[i].service+'\')" class="text-normal display-block">\
                     <figure class="text-align-center"style="padding:5px;">\
-                    <img src="https://raskservices.com/admin/icons/'+res.data[i].icon+'" alt=""style="width:60px;height:50px;" />\
-                 <h6 class="text-color-theme"style="font-size:8pt;font-weight:400;word-break:break;">'+res.data[i].service+'</h6>\
+                    <img src="https://raskservices.com/admin/icons/'+res.data[i].icon+'" alt=""style="width:50px;height:40px;margin-bottom:5px;" />\
+                 <h6 class="text-color-theme"style="font-size:8pt;font-weight:400;word-break:break-all;">'+res.data[i].service+'</h6>\
                     </figure>\
                   </a>\
                 </div>\
@@ -335,15 +335,8 @@ function loadLocality(){
         if(res.success == 'Success'){ 
 			app.dialog.close();
             len = res.data.length;
-            var locality = localStorage.getItem("rask_locality");
-            if(locality == '' || locality == null)
-                {
-                    list='<option value="reg_local">Select</option>';
-                }
-            else{  
-            
-            list='<option value="reg_local">'+locality+'</option>';
-            }
+                    list='<option value="">Select</option>';
+             
 		for(i=0; i< len; i++)
 		  {
               
@@ -443,8 +436,8 @@ function loadLocality2(){
             $("#view_response_status").html('Status: '+res.data[0].req_stat);
             $("#view_response").html('Response: '+res.data[0].response);
             $("#user_message").html('Request Message: '+res.data[0].message);
-            $("#staff_name").html('Staff Name: '+res.data[0].staff);    
-            $("#staff_pic").attr('src', +res.data[0].staff_pic+'?t='+timestamp);    
+            $("#staff_name").html('Workman Name: '+res.data[0].staff);    
+            $("#staff_pic").attr('src', ''+res.data[0].staff_pic+'');    
             localStorage.setItem("service_id",res.data[0].request_id);
                  
                  
@@ -667,5 +660,141 @@ function loadLocality2(){
 }
 
 
+///////////////////////////////////////////////////////////////////
+/////////////////serch services
+  function searchService()
+{
+    var list='';
+    $("#service_list").html(""); 
+    var value = $("#service_search").val();
+    
+    
+    if(value == '' || value == null)
+        {
+             $("input#service_search").css('background-image' , 'url(img/search.png)');
+            loadService();
+            
+            
+        }
+    else{   
+       
+        $("input#service_search").css('background-image' , 'none');
+        
+          app.request.post(api_url+'search_services.php',{value : value},
+        function(res){
+        var res =JSON.parse(res)
+         console.log(res);		
+        if(res.status == true){ 
+			app.dialog.close();
+            len = res.data.length;
+            
+		for(i=0; i< len; i++)
+		  {
+              
+            list +='<div class="col-25 medium-15 large-10"style="padding:10px;">\
+                <div class="card elevation-2 marginbottomhalf">\
+                <div class="card-content card-contentpadding"style="height:95px;">\
+                  <a href="/order-service/"onclick="orderService(\''+res.data[i].service+'\')" class="text-normal display-block">\
+                    <figure class="text-align-center"style="padding:5px;">\
+                    <img src="https://raskservices.com/admin/icons/'+res.data[i].icon+'" alt=""style="width:50px;height:40px;margin-bottom:5px;" />\
+                 <h6 class="text-color-theme"style="font-size:8pt;font-weight:400;word-break:break-all;">'+res.data[i].service+'</h6>\
+                    </figure>\
+                  </a>\
+                </div>\
+              </div>\
+            </div>';  
+			 
+          }
+           
+			  $("#service_list").html(list); 
+            
+        }
+		else{
+          app.dialog.close(); 
+          $("#service_list").html('<div class="col-100 medium-100 large-100"style="padding:10px;">\
+                <div class="card elevation-2 marginbottomhalf">No service found!!</div></div>'); 
+            //setTimeout(function () {  loadService();  }, 1000);
+        }
 
+        },function(err) {           
+
+                app.dialog.close();
+                toastWithButton = app.toast.create({text: 'Check your connection',closeButton: true, closeTimeout: 5000,});
+                toastWithButton.open();
+            setTimeout(function () {  loadService();  }, 2000);
+
+            
+        });   
+    }
+    
+   
+}
+
+////////open browser//////////
+  function openPhotoBrowser()
+{    
+    
+    var timestamp = new Date().getTime();
+ photoGallery = app.photoBrowser.create({
+       
+        photos: [
+            api_url_admin+'products/'+localStorage.getItem('product_tag')+'.png?t='+timestamp,
+            api_url_admin+'products/'+localStorage.getItem('product_tag')+'2.png?t='+timestamp,
+            api_url_admin+'products/'+localStorage.getItem('product_tag')+'3.png?t='+timestamp,
+            api_url_admin+'products/'+localStorage.getItem('product_tag')+'4.png?t='+timestamp,
+            api_url_admin+'products/'+localStorage.getItem('product_tag')+'5.png?t='+timestamp,
+           
+        ],
+        type: 'standalone',
+        theme: 'light',
+        virtualSlides: true,
+        navbarShowCount: false,
+        momentumBounce: false,
+        popupCloseLinkText: '<i class="f7-icons">xmark</i>',
+        swiper: {
+            speed: 600,
+            navigation: {
+                nextEl: '.photo-browser-next',
+                prevEl: '.photo-browser-prev',
+            },
+            pagination: {
+                el: '.gallery-pagination',
+            },
+            effect: 'coverflow',
+            coverflowEffect: {
+                rotate: 30,
+                slideShadows: false,
+            },
+            zoom: {
+                enabled: false,
+                maxRatio: 0,
+                minRatio: 0,
+              },
+            
+            
+        },
+        renderNavbar: function () {
+            return '<div class="close-photo-gallery link popup-close"><i class="f7-icons">xmark</i></div>';
+        },
+        renderToolbar: function () {
+            return `
+            <div class="photo-gallery-footer d-flex"><i class="f7-icons link photo-browser-prev">arrow_left</i>
+            <div class="gallery-pagination"></div><i class="f7-icons link photo-browser-next">arrow_right</i></div>
+            `;
+        },
+    }); 
+
+
+    var tag = localStorage.getItem('product_tag');
+
+    if(tag == '')
+        {
+            
+        }
+    else{
+       // alert(tag);
+photoGallery.open();
+}
+    
+  }
 

@@ -49,6 +49,9 @@ function callProfile(){
         $("#booking_mobile").val(phone);
         $("#booking_service").val(localStorage.getItem("rask_service"));
         
+            
+         $("#booking_name").prop('readonly', true); 
+            $("#booking_email").prop('readonly', true); 
              
              
              

@@ -9,6 +9,91 @@
     url(../fonts/MaterialIcons-Regular.ttf) format('truetype');
 }
 
+/* photo gallery****/
+.close-photo-gallery {
+	position: absolute;
+	top: 31px;
+	right: 20px;
+	width: 36px;
+	height: 36px;
+	text-align: center;
+	border-radius: 100%;
+	background: #fff;
+	color: #535B72;
+	z-index: 3;
+}
+
+.close-photo-gallery i {
+	font-size: 20px;
+	font-weight: 700;
+}
+
+.photo-gallery-footer {
+	position: absolute;
+	width: 100%;
+	bottom: 20px;
+	left: 5%;
+    right:5%;
+	z-index: 3;
+    display: flex;
+   
+}
+.gallery-pagination{width:70%; text-align: center;color: #77c4f0;}
+
+.photo-gallery-footer > i {
+	width: 36px;
+	height: 36px;
+	line-height: 36px;
+	text-align: center;
+	display: block;
+	font-size: 18px;
+	font-weight: 700;
+	border-radius: 100%;
+	background: #77c4f0;
+	color: var(--secondary-dark);
+}
+
+.photo-gallery-footer .swiper-pagination-bullet {
+	width: 7px;
+	height: 7px;
+	border-radius: 100%;
+	display: inline-block;
+	background: #858585;
+    color: #77c4f0;
+	opacity: 0.8;
+	transition: all .3s ease;
+}
+
+.photo-gallery-footer .swiper-pagination-bullet + .swiper-pagination-bullet {
+	-webkit-margin-inline-start: 8px;
+	margin-inline-start: 8px;
+}
+
+.photo-gallery-footer .swiper-pagination-bullet.swiper-pagination-bullet-active {
+	width: 20px;
+	background: var(--primary-dark);
+	border-radius: 4px;
+}
+
+.photo-gallery-footer + .photo-browser-captions + .swiper-container .swiper-slide {position: relative;}
+.photo-gallery-footer + .photo-browser-captions + .swiper-container .swiper-slide::before {
+	position: absolute;
+	content: '';
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	opacity: 0;
+}
+
+.photo-gallery-footer + .photo-browser-captions + .swiper-container .swiper-slide,
+.photo-gallery-footer + .photo-browser-captions + .swiper-container .swiper-slide .swiper-zoom-container,
+.photo-gallery-footer + .photo-browser-captions + .swiper-container .swiper-slide img {
+	height: 100% !important;
+	object-fit: contain;
+}
+/* page-gallery start */
+
 .material-icons {
   font-family: 'Material Icons';
   font-weight: normal;

@@ -11,6 +11,13 @@ var app = new Framework7({
 });
 
 
+
+
+
+
+
+
+
 $(document).on('page:init', '.page[data-name="splash"]', function (e) {
   setTimeout(function () {
     app.views.main.router.navigate('/landing/');
@@ -33,6 +40,7 @@ $(document).on('page:init', '.page[data-name="landing"]', function (e) {
 
 $(document).on('page:init', '.page[data-name="home"]', function (e) {
      setTimeout(function () {
+         loadShopBanner();
     /////////////////////////
      var ndate = new Date();
     var hours = ndate.getHours();
@@ -148,6 +156,7 @@ $(document).on('page:init', '.page[data-name="my-service-list"]', function (e) {
 $(document).on('page:init', '.page[data-name="booking"]', function (e) {
   setTimeout(function () {
     loadLocality();
+     // callProfilex()
   }, 200);
 })
 
@@ -185,7 +194,24 @@ $(document).on('page:init', '.page[data-name="verify"]', function (e) {
 ///////////////////////////////
 ///////////ecommerce///
 $(document).on('page:init', '.page[data-name="shop"]', function (e) {
-   var swiper1x = app.swiper.create(".offerslides2", {
+     loadShopBanner();
+  
+    
+    
+    ////////////
+    setTimeout(function () {
+    loadShortMenu();
+           
+        
+  }, 500);
+    
+    
+     
+    ////////////
+    setTimeout(function () {
+    
+        
+     var swiper1x = app.swiper.create(".offerslides2", {
     slidesPerView: "1.3",
     spaceBetween: 10,
        autoplay: {
@@ -195,13 +221,13 @@ $(document).on('page:init', '.page[data-name="shop"]', function (e) {
     pagination: {
       el: '.pagination-offerslides2'
     }
-  });
+  });    
+        
+  }, 2000);
     
     
-    ////////////
-    setTimeout(function () {
-    loadShortMenu();
-  }, 500);
+    
+    
       var storedItem = JSON.parse(localStorage.getItem("shoppingCart"));
                       
 					   if(storedItem.length==0)
@@ -359,4 +385,28 @@ $(document).on('page:init', '.page[data-name="product_page"]', function (e) {
     }
   });
 });
+
+
+
+
+
+/////////////////////////////////
+//////////////////////
+ //////////////////
+     $(document).on('keyup keypress', function(e) {
+  var keyCode = e.keyCode || e.which;
+  if (keyCode === 13) { 
+    e.preventDefault();
+    return false;
+  }
+});
+
+
+
+
+
+
+
+
+
 

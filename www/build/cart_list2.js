@@ -47,7 +47,7 @@ loadDelivery2();
                             <div class="row">\
                                 <div class="col-auto">\
                                     <figure class="text-align-center no-margin-bottom avatar avatar-90 page-bg rounded p-1">\
-                                        <img src="'+api_url2+'product_image/'+storedItem[i].product_tag+'.png?t='+timestamp+'"id="image_edit" alt="" class="">\
+                                        <img src="'+api_url_admin+'products/'+storedItem[i].product_tag+'.png?t='+timestamp+'"id="image_edit" alt="" class="">\
                                     </figure>\
                                 </div>\
                                 <div class="col no-padding-left">\

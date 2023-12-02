@@ -10,7 +10,7 @@
           "/*": [
             {
               "xml": "<uses-permission android:name=\"android.permission.POST_NOTIFICATIONS\" />",
-              "count": 3
+              "count": 10
             },
             {
               "xml": "<uses-permission android:maxSdkVersion=\"32\" android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\" />",

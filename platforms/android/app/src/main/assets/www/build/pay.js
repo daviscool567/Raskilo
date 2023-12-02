@@ -68,8 +68,8 @@ function payOrder()
 		amount = Number(amount);
 		
     // alert(email);
-     // const API_publicKey = "FLWPUBK-419bfe43a75a946473c1ef696440c5e2-X";
-      const API_publicKey  ="FLWPUBK_TEST-1b936a791b2c93ac1d1507c685d986ff-X";
+      const API_publicKey = "FLWPUBK-6628ebd8049d6427307e26cc4c0053c3-X";
+     // const API_publicKey  ="FLWPUBK_TEST-1b936a791b2c93ac1d1507c685d986ff-X";
     var reference= Math.floor((Math.random() * 1000000000000) + 1);
        if(amount == '' || amount == null)
 	{

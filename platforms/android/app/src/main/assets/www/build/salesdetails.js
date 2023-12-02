@@ -60,7 +60,7 @@ function salesDetails(tag){
                             <div class="row">\
                                 <div class="col-auto">\
                                     <figure class="text-center avatar-70 avatar">\
-                                       <img src="'+api_url2+'product_image/'+res.data[i].item_tag+'.png?t='+timestamp+'" class="">\
+                                       <img src="'+api_url_admin+'products/'+res.data[i].item_tag+'.png?t='+timestamp+'" class="">\
                                     </figure>\
                                 </div>\
                                 <div class="col no-padding-left align-self-center">\
@@ -93,7 +93,7 @@ function salesDetails(tag){
                             <div class="row">\
                                 <div class="col-auto">\
                                     <figure class="text-center avatar-70 avatar">\
-                                       <img src="'+api_url2+'product_image/'+res.data[i].item_tag+'.png?t='+timestamp+'" class="">\
+                                       <img src="'+api_url_admin+'products/'+res.data[i].item_tag+'.png?t='+timestamp+'" class="">\
                                     </figure>\
                                 </div>\
                                 <div class="col no-padding-left align-self-center">\
@@ -388,7 +388,7 @@ function loadAllReview()
                             <div class="row">\
                                 <div class="col-auto">\
                                     <figure class="text-center avatar-70 avatar">\
-                                       <img src="'+api_url2+'product_image/'+res.data[i].item_tag+'.png?t='+timestamp+'" class="">\
+                                       <img src="'+api_url_admin+'products/'+res.data[i].item_tag+'.png?t='+timestamp+'" class="">\
                                     </figure>\
                                 </div>\
                                 <div class="col no-padding-left align-self-center">\

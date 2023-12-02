@@ -22,8 +22,8 @@
     <feature name="Geolocation">
         <param name="android-package" value="org.apache.cordova.geolocation.Geolocation" />
     </feature>
-    <name>Raskilo Group</name>
-    <description>Raskilo Group</description>
+    <name>RASK SERVICES</name>
+    <description>RASK SERVICES</description>
     <author email="dev@cordova.apache.org" href="https://cordova.apache.org">
 Diimtech
     </author>

@@ -20,11 +20,11 @@ function loadStat(){
 		  {
 		   price = Number(res.data[i].item_price);
 		  list +='<div class="col-50 medium-33 large-25">\
-              <div class="card elevation-2 product margin-bottom" style="min-height:260px;">\
+               <div class="card elevation-2 product margin-bottom" style="max-height:300px;">\
                 <div class="card-content card-content-padding"style="padding:4px;min-height:150px;">\
                   <a href="/product/"onclick="lookProduct(\''+res.data[i].product_tag+'\')">\
-                     <figure class="text-align-center"style="background: none;min-height:130px">\
-                    <img src="'+api_url2+'product_image/'+res.data[i].product_tag+'.png?t='+timestamp+'" alt=""style="width:100%;border-radius:5px;object-fit: cover;" />\
+                     <figure class="text-align-center"style="background: none;height:180px;">\
+                    <img src="'+api_url_admin+'products/'+res.data[i].product_tag+'.png?t='+timestamp+'" alt=""style="width:100%;border-radius:5px;object-fit: cover;min-height:130px;max-height:180px;" />\
                   </figure></a>\
                   <p class="">\
                     <small class="text-opac"style="font-size:9pt;padding-left:5px;">'+res.data[i].product_category+'</small>\
@@ -164,7 +164,7 @@ function loadStatScroll(){
                 <div class="card-content card-content-padding"style="padding:4px;min-height:150px;">\
                   <a href="/product/"onclick="lookProduct(\''+res.data[i].product_tag+'\')">\
                      <figure class="text-align-center"style="background: none;min-height:130px">\
-                    <img src="'+api_url2+'product_image/'+res.data[i].product_tag+'.png?t='+timestamp+'" alt=""style="width:100%;border-radius:5px;object-fit: cover;" />\
+                    <img src="'+api_url_admin+'products/'+res.data[i].product_tag+'.png?t='+timestamp+'" alt=""style="width:100%;border-radius:5px;object-fit: cover;" />\
                   </figure></a>\
                   <p class="">\
                     <small class="text-opac"style="font-size:9pt;padding-left:5px;">'+res.data[i].product_category+'</small>\
@@ -254,7 +254,7 @@ function loadStatCat(){
                 <div class="card-content card-content-padding"style="padding:4px;min-height:150px;">\
                   <a href="/product/"onclick="lookProduct(\''+res.data[i].product_tag+'\')">\
                      <figure class="text-align-center"style="background: none;min-height:130px">\
-                    <img src="'+api_url2+'product_image/'+res.data[i].product_tag+'.png?t='+timestamp+'" alt=""style="width:100%;border-radius:5px;object-fit: cover;" />\
+                    <img src="'+api_url_admin+'products/'+res.data[i].product_tag+'.png?t='+timestamp+'" alt=""style="width:100%;border-radius:5px;object-fit: cover;" />\
                   </figure></a>\
                   <p class="">\
                     <small class="text-opac"style="font-size:9pt;padding-left:5px;">'+res.data[i].product_category+'</small>\
@@ -347,7 +347,7 @@ function loadStatScrollCat(){
                 <div class="card-content card-content-padding"style="padding:4px;min-height:150px;">\
                   <a href="/product/"onclick="lookProduct(\''+res.data[i].product_tag+'\')">\
                      <figure class="text-align-center"style="background: none;min-height:130px">\
-                    <img src="'+api_url2+'product_image/'+res.data[i].product_tag+'.png?t='+timestamp+'" alt=""style="width:100%;border-radius:5px;object-fit: cover;" />\
+                    <img src="'+api_url_admin+'products/'+res.data[i].product_tag+'.png?t='+timestamp+'" alt=""style="width:100%;border-radius:5px;object-fit: cover;" />\
                   </figure></a>\
                   <p class="">\
                     <small class="text-opac"style="font-size:9pt;padding-left:5px;">'+res.data[i].product_category+'</small>\
@@ -434,7 +434,7 @@ function loadStatSort(){
                 <div class="card-content card-content-padding"style="padding:4px;min-height:150px;">\
                   <a href="/product/"onclick="lookProduct(\''+res.data[i].product_tag+'\')">\
                      <figure class="text-align-center"style="background: none;min-height:130px">\
-                    <img src="'+api_url2+'product_image/'+res.data[i].product_tag+'.png?t='+timestamp+'" alt=""style="width:100%;border-radius:5px;object-fit: cover;" />\
+                    <img src="'+api_url_admin+'products/'+res.data[i].product_tag+'.png?t='+timestamp+'" alt=""style="width:100%;border-radius:5px;object-fit: cover;" />\
                   </figure></a>\
                   <p class="">\
                     <small class="text-opac"style="font-size:9pt;padding-left:5px;">'+res.data[i].product_category+'</small>\
@@ -535,7 +535,7 @@ function loadStatScrollSort(){
                 <div class="card-content card-content-padding"style="padding:4px;min-height:150px;">\
                   <a href="/product/"onclick="lookProduct(\''+res.data[i].product_tag+'\')">\
                      <figure class="text-align-center"style="background: none;min-height:130px">\
-                    <img src="'+api_url2+'product_image/'+res.data[i].product_tag+'.png?t='+timestamp+'" alt=""style="width:100%;border-radius:5px;object-fit: cover;" />\
+                    <img src="'+api_url_admin+'products/'+res.data[i].product_tag+'.png?t='+timestamp+'" alt=""style="width:100%;border-radius:5px;object-fit: cover;" />\
                   </figure></a>\
                   <p class="">\
                     <small class="text-opac"style="font-size:9pt;padding-left:5px;">'+res.data[i].product_category+'</small>\
@@ -615,7 +615,7 @@ function loadStatScrollSort(){
                 <div class="card-content card-content-padding"style="padding:4px;min-height:150px;">\
                   <a href="/product/"onclick="lookProduct(\''+res.data[i].product_tag+'\')">\
                      <figure class="text-align-center"style="background: none;min-height:130px">\
-                    <img src="'+api_url2+'product_image/'+res.data[i].product_tag+'.png?t='+timestamp+'" alt=""style="width:100%;border-radius:5px;object-fit: cover;" />\
+                    <img src="'+api_url_admin+'products/'+res.data[i].product_tag+'.png?t='+timestamp+'" alt=""style="width:100%;border-radius:5px;object-fit: cover;" />\
                   </figure></a>\
                   <p class="">\
                     <small class="text-opac"style="font-size:9pt;padding-left:5px;">'+res.data[i].product_category+'</small>\
